@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LTMS Online Portal</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+</head>
+<body>
+    <div class="header">
+        <div class="header-left">
+            <img src="image/Land_Transportation_Office.svg.png" alt="Logo"> <!-- Header logo -->
+            LTMS Online Portal
+        </div>
+        <div class="header-right">
+            <span class="t-Button-label" onclick="window.location.href='https://www.lto.gov.ph'">LTO Official Webpage</span>
+            <span class="t-Button-label" onclick="window.location.href='e-learning.html'">E-Learning</span>
+            <span class="t-Button-label" onclick="window.location.href='contact.html'">Contact</span>
+            <span class="t-Button-label" onclick="window.location.href='dashboard.html'">Dashboard</span>
+        </div>
+    </div>
+    <div class="overlay">
+        <img src="image/Land_Transportation_Office.svg.png" alt="Center Image"> <!-- Center image -->
+        <h2>WELCOME, JOHN AARON</h2> <!-- Text below the image -->
+        <div class="image-container">
+            <a href="#" class="image-box" onclick="openModal()"><img src="image/461141756_1198209394769053_6054787398448402050_n-removebg-preview.png" alt="Image 1"></a>
+            <a href="link2.html" class="image-box"><img src="image/460355970_2234015213642455_1554184263125800670_n-removebg-preview.png" alt="Image 2"></a>
+            <a href="link3.html" class="image-box"><img src="image/461822458_1558579934865056_6709385378199199722_n-removebg-preview.png" alt="Image 3"></a>
+            <a href="link4.html" class="image-box"><img src="image/461196059_910294057821663_8729452214421821586_n-removebg-preview.png" alt="Image 4"></a>
+            <a href="link5.html" class="image-box"><img src="image/461246725_3855986701324698_8315286990966750149_n__1_-removebg-preview.png" alt="Image 5"></a>
+            <a href="link6.html" class="image-box"><img src="image/461196058_568570152258793_5926156339662151134_n-removebg-preview.png" alt="Image 6"></a>
+            <a href="link7.html" class="image-box"><img src="image/460333050_2410285845969191_637621378269835787_n-removebg-preview.png" alt="Image 7"></a>
+        </div>
+    </div>
+
+    <!-- Modal with Flip Animation -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+
+            <!-- Flip container -->
+            <div class="flip-container">
+                <div class="flipper">
+                    <!-- Front Side -->
+                    <div class="front">
+                        <img src="image/451680836_709246121331165_5396543235933894235_n.jpg" alt="Sample Image" style="width: 110%; height: auto;">
+                    </div>
+                    <!-- Back Side -->
+                    <div class="back">
+                        <img src="image/451607719_481835057763014_3027656089637322902_n.jpg" alt="Backside Image" style="width: 110%; height: auto;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="message-box">
+                <p></p>
+            </div>
+            <!-- Button Container -->
+            <div class="button-container">
+                <button class="modal-button left-button" onclick="closeModal()">Close</button>
+                <div class="right-buttons">
+                    <button class="modal-button" id="flipButton">Backside</button>
+                    <button class="modal-button">QR Code</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Open modal
+        function openModal() {
+            document.getElementById("myModal").style.display = "flex"; // Use flex to center content
+        }
+
+        // Close modal
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+            document.querySelector('.flipper').classList.remove('flip'); // Reset flip state
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById("myModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        };
+
+        // Flip animation trigger
+        document.getElementById('flipButton').onclick = function() {
+            document.querySelector('.flipper').classList.toggle('flip');
+        };
+
+        // Parallax effect on mouse move
+        document.addEventListener('mousemove', (e) => {
+            const x = (e.clientX / window.innerWidth) * 10; // Slower movement
+            const y = (e.clientY / window.innerHeight) * 10; // Slower movement
+            document.body.style.backgroundPosition = `${x}% ${y}%`;
+        });
+    </script>
+</body>
+</html>
