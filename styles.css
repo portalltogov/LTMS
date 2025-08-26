@@ -89,7 +89,7 @@ body {
 }
 
 .image-box img {
-    width: 100%;
+    width: 200%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s;
@@ -121,16 +121,15 @@ body {
 }
 
 .modal-content {
-    padding: 40px;
+    padding: 20px;
     border: none;
     text-align: center;
     color: black;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    width: 800px;
-    height: 400px;
-    max-width: 90%;
+    max-width: 95%;
+    max-height: 95%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -215,3 +214,40 @@ body {
 .back {
     transform: rotateY(180deg); /* Backside starts rotated */
 }
+
+/* --- Dagdag size para sa images --- */
+.front img,
+.back img {
+    width: 120%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Responsive adjustment para sa cellphone */
+@media (max-width: 768px) {
+    .modal-content {
+        width: auto;    /* sumunod sa laki ng image */
+        height: auto;
+        padding: 70px;
+    }
+
+    .flipper {
+        width: 100%;    /* buong lapad ng modal */
+    }
+
+    .front img,
+    .back img {
+        width: 100%;    /* sakto sa box, hindi maliit */
+        height: auto;
+    }
+
+    .button-container {
+        flex-direction: column; /* gawing column para di dikit sa gilid */
+        align-items: center;
+        margin-top: 15px;
+    }
+
+    .right-buttons {
+        margin-top: 130px;
+    }
+
